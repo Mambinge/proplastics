@@ -108,9 +108,8 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-ink-200">
-        <Container className="py-5 flex flex-col gap-2 text-xs text-ink-500 sm:flex-row sm:items-center sm:justify-between">
+        <Container className="py-5 text-xs text-ink-500">
           <p>&copy; {new Date().getFullYear()} Proplastics Limited. All rights reserved.</p>
-          <p>Manufactured in Zimbabwe · SADC-wide distribution</p>
         </Container>
       </div>
     </footer>

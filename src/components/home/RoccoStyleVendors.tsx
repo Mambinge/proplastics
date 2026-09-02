@@ -1,7 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
-import { Play } from "lucide-react";
+import { Award, Play } from "lucide-react";
 
 const certificationsAndBrands = [
   { name: "SABS Approved", code: "SANS 966-1", desc: "South African Bureau of Standards" },
@@ -10,6 +11,13 @@ const certificationsAndBrands = [
   { name: "PVC-O Certified", code: "Class 500", desc: "Oriented PVC High Pressure" },
   { name: "HDPE PE100", code: "ISO 4427", desc: "High Density Polyethylene" },
   { name: "Marley Pipe Systems", code: "Partner Tech", desc: "Advanced Drainage Technology" },
+];
+
+const accreditationLogos = [
+  { name: "SABS ISO 9001", src: "/logos/certification-logos-1.png" },
+  { name: "SAPPMA", src: "/logos/certification-logos-2.png" },
+  { name: "IFPA", src: "/logos/certification-logos-3.png" },
+  { name: "SAZ ISO 9001 Registered Supplier", src: "/logos/certification-logos-4.png" },
 ];
 
 export default function RoccoStyleVendors() {
@@ -67,6 +75,33 @@ export default function RoccoStyleVendors() {
                   </p>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Accreditation logo strip */}
+        <div className="mt-16 border-t border-brand-100 pt-10">
+          <p className="text-center text-xs font-bold uppercase tracking-widest text-ink-400">
+            Accredited &amp; Registered With
+          </p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
+            {accreditationLogos.map((logo) => (
+              <div key={logo.name} className="relative h-12 w-28 grayscale opacity-70 transition-all hover:grayscale-0 hover:opacity-100 sm:h-14 sm:w-32">
+                <Image
+                  src={logo.src}
+                  alt={logo.name}
+                  fill
+                  className="object-contain"
+                  sizes="150px"
+                />
+              </div>
+            ))}
+            <div className="flex items-center gap-2 grayscale opacity-70 transition-all hover:grayscale-0 hover:opacity-100">
+              <Award className="h-9 w-9 text-flow-600" />
+              <div className="text-left leading-tight">
+                <p className="font-display text-lg font-extrabold text-brand-950">50 Years</p>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-ink-500">Guaranteed Quality</p>
+              </div>
             </div>
           </div>
         </div>

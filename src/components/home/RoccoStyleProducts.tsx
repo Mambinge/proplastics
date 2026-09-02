@@ -26,11 +26,9 @@ export default function RoccoStyleProducts() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left Header & Intro Column */}
           <div className="lg:col-span-5 lg:sticky lg:top-28">
-            {/* Tag Pill Container matching Rocco's tag-products-wrapper */}
-            <div className="inline-block rounded-md bg-flow-600 p-1 mb-6 shadow-md">
-              <div className="rounded-xs border border-white/30 bg-flow-700 px-4 py-1 text-xs font-extrabold uppercase tracking-widest text-white">
-                Products &amp; Systems
-              </div>
+            {/* Tag Pill */}
+            <div className="mb-6 inline-block rounded-md bg-flow-600 px-4 py-1.5 text-xs font-extrabold uppercase tracking-widest text-white shadow-md">
+              Products &amp; Systems
             </div>
 
             <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-brand-950 tracking-tight leading-tight">
