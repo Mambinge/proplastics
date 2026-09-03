@@ -14,10 +14,11 @@ export const metadata: Metadata = {
 };
 
 const channels = [
-  { icon: Phone, label: "Toll Free", value: "08004464" },
-  { icon: Mail, label: "Email", value: "info@proplastics.co.zw" },
+  { icon: Phone, label: "Phone", value: "+263 242 621651-5" },
+  { icon: Mail, label: "Sales Enquiries", value: "sales@proplastics.co.zw" },
+  { icon: Mail, label: "Billing & Accounts", value: "billing@proplastics.co.zw" },
   { icon: Clock, label: "Business Hours", value: "Mon – Fri, 8:00 – 17:00" },
-  { icon: MapPin, label: "Head Office", value: "Harare Drive, Msasa, Harare" },
+  { icon: MapPin, label: "Head Office", value: "5 Spurn Road, New Ardbennie, Harare" },
 ];
 
 export default function ContactPage() {
@@ -97,7 +98,7 @@ export default function ContactPage() {
 
       <CTASection
         title="Prefer to speak with our technical team directly?"
-        description="For urgent specification queries, call our toll-free line or reach us on WhatsApp."
+        description="For urgent specification queries, call our head office or reach us on WhatsApp."
         secondaryLabel="View technical resources"
       />
     </>

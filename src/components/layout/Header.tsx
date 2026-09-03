@@ -44,8 +44,8 @@ export default function Header() {
         <Container className="flex items-center justify-between py-2 text-xs">
           <p className="tracking-wide">ZSE-listed manufacturer · Zimbabwe &amp; regional distribution</p>
           <div className="flex items-center gap-5">
-            <a href="tel:08004464" className="flex items-center gap-1.5 hover:text-white/80">
-              <Phone className="h-3.5 w-3.5" /> Toll Free 08004464
+            <a href="tel:+263242621651" className="flex items-center gap-1.5 hover:text-white/80">
+              <Phone className="h-3.5 w-3.5" /> +263 242 621651-5
             </a>
             <Link href="/contact" className="hover:text-white/80">
               Find a distributor
