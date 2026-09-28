@@ -72,22 +72,33 @@ export default function Header() {
             <button className={navLinkClass}>
               Products <ChevronDown className="h-4 w-4" />
             </button>
-            <div className="invisible absolute left-1/2 top-full w-[640px] -translate-x-1/2 rounded-md border border-ink-100 bg-white p-6 opacity-0 shadow-xl transition-all group-hover:visible group-hover:opacity-100">
-              <div className="grid grid-cols-2 gap-x-8 gap-y-4">
+            <div className="invisible absolute left-1/2 top-full w-[900px] -translate-x-1/2 rounded-md border border-ink-100 bg-white p-6 opacity-0 shadow-xl transition-all group-hover:visible group-hover:opacity-100">
+              <div className="grid grid-cols-4 gap-x-6">
                 {productCategories.map((cat) => (
-                  <Link
-                    key={cat.slug}
-                    href={`/products/${cat.slug}`}
-                    className="rounded-sm p-2 hover:bg-brand-50"
-                  >
-                    <p className="text-sm font-semibold text-brand-950">{cat.name}</p>
-                    <p className="mt-0.5 text-xs text-ink-500 line-clamp-1">{cat.summary}</p>
-                  </Link>
+                  <div key={cat.slug}>
+                    <Link
+                      href={`/products/${cat.slug}`}
+                      className="block rounded-sm p-2 text-sm font-bold uppercase tracking-wide text-flow-600 hover:bg-brand-50"
+                    >
+                      {cat.name}
+                    </Link>
+                    <div className="mt-1 flex flex-col">
+                      {cat.products.map((p) => (
+                        <Link
+                          key={p.slug}
+                          href={`/products/${cat.slug}/${p.slug}`}
+                          className="rounded-sm px-2 py-1.5 text-sm text-brand-950 hover:bg-brand-50 hover:text-flow-600"
+                        >
+                          {p.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                 ))}
               </div>
               <Link
                 href="/products"
-                className="mt-4 inline-block text-xs font-semibold uppercase tracking-wide text-flow-600 hover:text-flow-700"
+                className="mt-5 inline-block border-t border-ink-100 pt-4 text-xs font-semibold uppercase tracking-wide text-flow-600 hover:text-flow-700"
               >
                 View all products →
               </Link>
@@ -168,16 +179,29 @@ export default function Header() {
                 Products
                 <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" />
               </summary>
-              <div className="flex flex-col gap-1 pb-2 pl-2">
+              <div className="flex flex-col gap-3 pb-2 pl-2">
                 {productCategories.map((cat) => (
-                  <Link
-                    key={cat.slug}
-                    href={`/products/${cat.slug}`}
-                    className="py-1.5 text-sm text-ink-600"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {cat.name}
-                  </Link>
+                  <div key={cat.slug}>
+                    <Link
+                      href={`/products/${cat.slug}`}
+                      className="text-xs font-bold uppercase tracking-wide text-flow-600"
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      {cat.name}
+                    </Link>
+                    <div className="mt-1 flex flex-col gap-1 pl-2">
+                      {cat.products.map((p) => (
+                        <Link
+                          key={p.slug}
+                          href={`/products/${cat.slug}/${p.slug}`}
+                          className="py-1 text-sm text-ink-600"
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          {p.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                 ))}
               </div>
             </details>
